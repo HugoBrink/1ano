@@ -1,0 +1,36 @@
+Ideia 18/19 Novembro
+
+
+1. Combinar jantar em casa dele (19h)
+2. Hora marcada nao aparecer, nem responder. Deixar passar tempo.... deixar passar 
+3. Certo momento mando o site
+4. No final do site recebo um email a avisar que ele acabou, toco à campainha e deixo lá o embrulho
+
+
+''''''
+
+Site
+1. tentar ter o código dele para o meu site e adaptar (www.fazhojeumanoque.xyz) 			
+2. "beter goed gestolen dan slecht bedacht" // "a good artist copy a great artist steal"		funnyme.html
+3. Primeiro challenge -- islandia									umfriodocaralhoeeuaquinumacarrinha.html
+4. primeiro screenshot											screenshot.html
+5. Segundo challenge -- (fill word)									fillword.html
+6. segundo screenshot											.
+7. terceiro challenge -- avoid (what) to get (what)							jogo.html
+8. terceiro screenshot 											terceiro.html
+9. quarto challenge -- que horas sao no relogio do marcelo						podiatersido.html
+10. quarto screenshot 											ebomquesejaaultimavez.html
+11. quinto challenge --- prendas que nao gostamos, (voice messages)					declaracao.html
+12. prenda --- botao que me manda msg/email para eu me lembrar 						fim.html
+
+
+
+
+<!--MUDAR--> commenting stuff 
+
+-----
+TO-DOS:
+1. put it up online
+2. make it prettier
+3. make sure "alemã" ou "alema" is accepted
+4. eu tambem --- aceitar qualquer coisa?

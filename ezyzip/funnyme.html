@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+  <span
+     class="txt-rotate"
+     data-period="1000"
+     data-rotate='["🇳🇱 Beter goed gestolen dan slecht bedacht", "🇺🇸 A good artist copies, a great artist steals", "🇵🇹 Um bom artista copia, uma Eva rouba"]'></span>
+</h1>
+<a href="umfriodocaralhoeeuaquinumacarrinha.html" class="hbtn hb-fill-on">Start</a>  
+</body>
+</html>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+
+<style>
+html,body {
+  font-family: 'Raleway', sans-serif;
+  padding: 1em 2em;
+  font-size: 18px;
+  background: #222;
+  color: #aaa;
+  cursor: url('earrings.png'), pointer;     <!--MUDAR-->
+}
+
+h1,h2 {
+  font-weight: 200;
+  margin: 0.4em 0;
+}
+h1 { font-size: 3.5em; }
+h2 {
+  color: #888;
+  font-size: 2em;
+}
+.hbtn {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      overflow: hidden;
+      padding: 8px 20px;
+      margin: 0px 3px 6px;
+      text-align: center;
+      border: 2px solid rgb(255, 255, 255);
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      white-space: nowrap;
+      z-index: 0;
+}
+
+
+.hbtn i {
+      padding-right: 8px;
+}
+
+
+.hb-fill-on::before {
+      position: absolute;
+      content: "";
+      background: rgb(255, 255, 255);
+      transition-duration: 0.3s;
+      z-index: -1;
+      inset: 0px auto auto 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+}
+
+
+.hb-fill-on:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+}
+
+
+.hb-fill-on:hover {
+      color: rgb(0, 0, 0);
+      background: rgb(255, 255, 255);
+      transition: color 0.3s ease 0s, background 0s ease 0.3s;
+}
+
+</style>
+
+<script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 50//300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+
+</script>
